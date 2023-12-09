@@ -1,0 +1,10 @@
+local ui = require('harpoon.ui')
+local mark = require('harpoon.mark')
+
+vim.keymap.set('n', '<leader>hh', ui.toggle_quick_menu, { desc = 'Toggle harpoon ui' })
+vim.keymap.set('n', '<leader>ha', mark.add_file, { desc = 'Add file to harpoon' })
+vim.keymap.set('n', '<leader>1', function() ui.nav_file(1) end, { desc = 'Navigate to harpoon 1 file' })
+vim.keymap.set('n', '<leader>2', function() ui.nav_file(2) end, { desc = 'Navigate to harpoon 2 file' })
+vim.keymap.set('n', '<leader>3', function() ui.nav_file(3) end, { desc = 'Navigate to harpoon 3 file' })
+vim.keymap.set('n', '<leader>4', function() ui.nav_file(4) end, { desc = 'Navigate to harpoon 4 file' })
+vim.keymap.set('n', '<leader>5', function() ui.nav_file(5) end, { desc = 'Navigate to harpoon 5 file' })
