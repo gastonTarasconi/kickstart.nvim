@@ -13,13 +13,31 @@ return {
         local max_filesize = 100 * 1024 -- 100 KB
         local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
         if ok and stats and stats.size > max_filesize then
-            return true
+          return true
         end
       end,
     },
     indent = { enable = true },
     auto_install = true, -- automatically install syntax support when entering new file type buffer
-    ensure_installed = { 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+    ensure_installed = {
+      "bash",
+      'go',
+      "html",
+      "javascript",
+      "json",
+      "lua",
+      "markdown",
+      "markdown_inline",
+      "python",
+      "query",
+      "regex",
+      'rust',
+      "tsx",
+      "typescript",
+      "vim",
+      'vimdoc',
+      "yaml",
+    },
     incremental_selection = {
       enable = true,
       keymaps = {
