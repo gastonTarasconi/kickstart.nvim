@@ -1,5 +1,3 @@
--- autoformat.lua
---
 -- Use your language server to automatically format your code on save.
 -- Adds additional commands as well to manage the behavior
 
@@ -8,7 +6,7 @@ return {
   config = function()
     -- Switch for controlling whether you want autoformatting.
     --  Use :KickstartFormatToggle to toggle autoformatting on or off
-    local format_is_enabled = true
+    local format_is_enabled = false
     vim.api.nvim_create_user_command('KickstartFormatToggle', function()
       format_is_enabled = not format_is_enabled
       print('Setting autoformatting to: ' .. tostring(format_is_enabled))

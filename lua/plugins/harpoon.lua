@@ -1,5 +1,9 @@
 return {
   'ThePrimeagen/harpoon',
+  event = 'VeryLazy',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+  },
   opts = {
     global_settings = {
       -- sets the marks upon calling `toggle` on the ui, instead of require `:w`.

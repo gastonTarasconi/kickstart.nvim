@@ -8,11 +8,21 @@ vim.o.hlsearch = false
 vim.wo.number = true
 vim.wo.relativenumber = true
 
+-- Tabs & Indentation
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.bo.softtabstop = 2
+
 -- Enable mouse mode
-vim.o.mouse = 'a'
+-- vim.o.mouse = 'a'
+vim.o.mouse = ''
 
 -- Sync clipboard between OS and Neovim.
 vim.o.clipboard = 'unnamedplus'
+-- TODO: check
+-- vim.opt.clipboard:append("unnamedplus")
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -46,3 +56,7 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
 vim.opt.colorcolumn = '80'
+
+
+-- Consider - as part of keyword
+vim.opt.iskeyword:append("-")

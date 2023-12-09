@@ -1,6 +1,4 @@
 return {
-
-  {
     'nvim-lualine/lualine.nvim',
     opts = {
         options = {
@@ -45,5 +43,4 @@ return {
         inactive_winbar = {},
         extensions = {}
       },
-    },
 }
