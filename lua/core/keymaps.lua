@@ -6,8 +6,8 @@ vim.g.mapleader = " "
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
@@ -150,4 +150,7 @@ vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { desc = 
 vim.keymap.set('n', '<leader>wl', function()
   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 end, { desc = '[W]orkspace [L]ist Folders' })
+
+-- Treesitter
+vim.keymap.set('n', '<leader>c', function() require("treesitter-context").go_to_context() end, { silent = true, desc = 'Go to [C]ontext' })
 

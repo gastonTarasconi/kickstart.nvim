@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
--- [[ Netrw h l ]] use l to open file/directories, h to go to parent directory
+-- [[ Netrw h l ]] use l to open file/directory, h to go to parent directory
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'netrw',
   callback = function()

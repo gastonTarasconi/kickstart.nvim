@@ -57,6 +57,7 @@ vim.g.netrw_winsize = 25
 
 vim.opt.colorcolumn = '80'
 
+vim.opt.fileencoding = 'utf-8'
 
 -- Consider - as part of keyword
 vim.opt.iskeyword:append("-")
