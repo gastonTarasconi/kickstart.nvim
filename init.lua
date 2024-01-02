@@ -52,26 +52,26 @@ require('mason-lspconfig').setup({
 })
 
 local lspconfig = require('lspconfig')
--- local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
--- --  This function gets run when an LSP connects to a particular buffer.
--- local lsp_attach = function(_, bufnr)
---   -- Create your keybindings here...
---   -- Create a command `:Format` local to the LSP buffer
---   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
---     vim.lsp.buf.format()
---   end, { desc = 'Format current buffer with LSP' })
--- end
+--  This function gets run when an LSP connects to a particular buffer.
+local lsp_attach = function(_, bufnr)
+  -- Create your keybindings here...
+  -- Create a command `:Format` local to the LSP buffer
+  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+    vim.lsp.buf.format()
+  end, { desc = 'Format current buffer with LSP' })
+end
 
 -- Call setup on each LSP server
--- require('mason-lspconfig').setup_handlers({
---   function(server_name)
---     lspconfig[server_name].setup({
---       on_attach = lsp_attach,
---       capabilities = lsp_capabilities,
---     })
---   end
--- })
+require('mason-lspconfig').setup_handlers({
+  function(server_name)
+    lspconfig[server_name].setup({
+      on_attach = lsp_attach,
+      capabilities = lsp_capabilities,
+    })
+  end
+})
 
 -- Lua LSP settings
 lspconfig.lua_ls.setup {
@@ -85,6 +85,7 @@ lspconfig.lua_ls.setup {
   },
 }
 
+lspconfig.tsserver.setup({})
 
 -- These modules are not loaded by lazy
 require('core.options')
